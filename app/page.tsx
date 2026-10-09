@@ -1,60 +1,88 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { products } from '@/lib/products';
-import { HeroSlab, ProductArt } from '@/components/StoneArt';
+import ProductCard from '@/components/ProductCard';
 import AskButton from '@/components/AskButton';
+
+const promises = [
+  ['One of a kind', 'Natural stone, so no two pieces match'],
+  ['Local delivery', 'Albany, Saratoga Springs and the Capital Region'],
+  ['Gift-ready', 'Boxed and wrapped on request'],
+  ['For retailers', 'Wholesale for stores and boutiques'],
+];
+const faqs = [
+  ['How do I care for onyx?', 'Hand wash with mild soap and warm water and dry right away. Skip the dishwasher, and rinse after citrus or other acidic drinks.'],
+  ['Do you deliver locally?', 'Yes, across Albany, Saratoga Springs and the Capital Region. The owner confirms timing and cost with your order.'],
+  ['Can I order engraving or bulk gifts?', 'Ask through the gift list or the product assistant, and the owner will share options and lead times.'],
+  ['I own a store. Can I stock your pieces?', 'Yes. Request the wholesale line sheet and samples on the For Retailers page.'],
+];
 
 export default function Home() {
   return (
     <>
       <section className="hero">
         <div className="hero-copy">
-          <h1>Stone that holds the light.</h1>
-          <p className="lede">Wine glasses, chillers, shot sets and mugs cut from natural onyx. Every piece carries its own banding, so no two gifts are the same.</p>
+          <p className="hero-kicker">The holiday edit</p>
+          <h1>Natural onyx, made to be given.</h1>
+          <p className="hero-text">Wine glasses, chillers, shot sets and mugs, each cut from stone with its own banding. No two are ever the same.</p>
           <div className="hero-actions">
-            <Link href="#collections" className="btn btn-solid">See the collection</Link>
-            <AskButton label="Ask our product assistant" />
+            <Link href="#shop" className="btn btn-dark">Shop the collection</Link>
+            <Link href="/gift-guide" className="btn btn-outline">Find a gift</Link>
           </div>
-          <p className="hero-place">Delivered across Albany and Saratoga Springs</p>
         </div>
-        <div className="hero-art"><HeroSlab /></div>
-      </section>
-
-      <section id="collections" className="collections">
-        <h2>The collection</h2>
-        <div className="collection-grid">
-          {products.map((p, i) => (
-            <Link key={p.slug} href={`/collections/${p.slug}`} className={`piece piece-${i}`}>
-              <ProductArt slug={p.slug} tone={p.tone} seed={i * 4 + 3} />
-              <h3>{p.name}</h3>
-              <p>{p.short}</p>
-            </Link>
-          ))}
+        <div className="hero-media">
+          <Image src="/images/onyx-honey.jpg" alt="Close-up of polished honey onyx with layered bands" fill priority sizes="(max-width: 860px) 100vw, 50vw" />
+          <span className="hero-caption">Honey onyx, polished</span>
         </div>
       </section>
 
-      <section className="why">
-        <div className="why-text">
+      <ul className="promises">{promises.map(([t, d]) => <li key={t}><strong>{t}</strong><span>{d}</span></li>)}</ul>
+
+      <section id="shop" className="shop">
+        <div className="section-head"><h2>Shop by piece</h2><p>Every piece is hand-finished. Images are illustrations until our product photography is ready.</p></div>
+        <div className="card-grid">{products.map((p) => <ProductCard key={p.slug} p={p} />)}</div>
+      </section>
+
+      <section id="our-stone" className="editorial">
+        <div className="editorial-media"><Image src="/images/onyx-pale.jpg" alt="Pale onyx with soft grey veins" fill sizes="(max-width: 860px) 100vw, 50vw" /></div>
+        <div className="editorial-copy">
           <h2>Why onyx</h2>
-          <p>Onyx forms in slow layers, which is where its bands of honey, green and white come from. Held up to a window, thinner walls glow from inside. It is heavier than glass, cool to the touch, and holds its temperature, which is why a chilled onyx sleeve keeps wine cold at the table.</p>
+          <p>Onyx forms in slow layers, which is where its bands of honey, cream and green come from. Hold a thin wall up to a window and it glows from inside.</p>
+          <p>It is heavier than glass and cool to the touch, and it holds its temperature. That is why a chilled onyx sleeve keeps a bottle cold right at the table.</p>
+          <AskButton label="Ask our assistant about the stone" prompt="What makes onyx special?" />
         </div>
-        <ul className="why-facts">
-          <li><strong>One of one</strong><span>Natural stone, so every piece is unique.</span></li>
-          <li><strong>Holds the cold</strong><span>Chill it once and it keeps drinks cool longer.</span></li>
-          <li><strong>Made to keep</strong><span>Hand-finished pieces meant to be displayed, not stored.</span></li>
-        </ul>
       </section>
 
-      <section className="split-band">
-        <Link href="/gift-guide" className="band band-gift">
-          <h2>Gifts that start a conversation</h2>
-          <p>A short guide for anniversaries, hosts, and the person who has everything.</p>
-          <span className="band-link">Open the gift guide</span>
-        </Link>
-        <Link href="/retailers" className="band band-retail">
-          <h2>Stock onyx in your store</h2>
-          <p>Wine and liquor stores and gift boutiques in the Capital Region can request our wholesale line sheet and samples.</p>
-          <span className="band-link">Request wholesale details</span>
-        </Link>
+      <section className="holiday">
+        <Image src="/images/gift-box.jpg" alt="Wrapped gift boxes with red ribbon" fill sizes="100vw" />
+        <div className="holiday-copy">
+          <h2>The gift that is never the same twice</h2>
+          <p>From anniversaries to the host who has everything, our gift guide matches each piece to the occasion.</p>
+          <Link href="/gift-guide" className="btn btn-light">Open the gift guide</Link>
+        </div>
+      </section>
+
+      <section className="local">
+        <div className="local-copy">
+          <h2>Serving the Capital Region</h2>
+          <p>We deliver across Albany and Saratoga Springs, and we partner with local wine shops and gift boutiques so you can see the stone in person.</p>
+          <Link href="/retailers" className="text-link">Own a store? Stock our pieces</Link>
+        </div>
+        <div className="local-media"><Image src="/images/saratoga.jpg" alt="Victorian house on North Broadway in Saratoga Springs" fill sizes="(max-width: 860px) 100vw, 50vw" /></div>
+      </section>
+
+      <section className="retail-band">
+        <div>
+          <h2>Wholesale for stores and boutiques</h2>
+          <p>Request our line sheet, minimum order, and samples delivered to your store.</p>
+        </div>
+        <Link href="/retailers" className="btn btn-light">Request wholesale details</Link>
+      </section>
+
+      <section id="faq" className="faq">
+        <h2>Questions, answered</h2>
+        {faqs.map(([q, a]) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}
+        <p className="faq-more">Still curious? <AskButton label="Ask our product assistant" /></p>
       </section>
     </>
   );

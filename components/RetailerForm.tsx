@@ -6,7 +6,7 @@ export default function RetailerForm() {
     <div className="form-card" role="status">
       <h2>Request received</h2>
       <p>In the live site, the owner gets this request by email and replies with the line sheet. This demo does not store any data.</p>
-      <button className="btn btn-line" onClick={() => setSent(false)}>Send another request</button>
+      <button className="btn btn-outline" onClick={() => setSent(false)}>Send another request</button>
     </div>
   );
   return (
@@ -24,7 +24,7 @@ export default function RetailerForm() {
         </select>
       </label>
       <label>City<input name="city" placeholder="Albany, Saratoga Springs…" /></label>
-      <button className="btn btn-solid" type="submit">Request line sheet</button>
+      <button className="btn btn-dark" type="submit">Request line sheet</button>
       <p className="sample-note">Demo form. Nothing you type here is saved.</p>
     </form>
   );

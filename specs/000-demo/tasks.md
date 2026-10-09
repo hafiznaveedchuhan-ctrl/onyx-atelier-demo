@@ -7,3 +7,6 @@
 - [x] T6 Chat widget UI
 - [x] T7 Build + visual QA
 - [ ] T8 GitHub repo + Vercel deploy (needs owner's PAT/env vars)
+- [x] T9 UI v2: premium US retail layout (spec-ui-v2.md)
+- [x] T10 Free-license onyx photography + /credits page
+- [x] T11 Gift list drawer (cart pattern, no invented prices)
