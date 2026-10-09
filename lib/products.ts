@@ -3,6 +3,7 @@ export type Product = {
   slug: string; name: string; badge: string; short: string; tagline: string;
   images: string[]; overview: string[]; highlights: { title: string; text: string }[];
   specs: [string, string][]; howTo: string[]; gifting: string; care: string[]; faqs: Faq[];
+  navLabel: string; features: { title: string; text: string }[]; perfectFor: string[];
 };
 export const BRAND = 'Onyx Atelier';
 const img = (slug: string, n: number) => Array.from({ length: n }, (_, i) => `/images/products/${slug}-${i + 1}.jpg`);
@@ -10,7 +11,14 @@ const careBase = ['Hand wash with mild soap and warm water.', 'Dry right away wi
 
 export const products: Product[] = [
   {
-    slug: 'wine-glasses', name: 'Onyx Wine Glasses, Set of 2', badge: 'Best for anniversaries', images: img('wine-glasses', 2),
+    slug: 'wine-glasses',
+    navLabel: 'Wine Glasses',
+    features: [
+      { title: 'Light that glows through stone', text: 'Onyx is translucent where it is thin. Set your pair near a candle or a sunny window and the walls light up from inside, showing every band of honey, cream and green. It is the detail guests notice first.' },
+      { title: 'Weight that feels like quality', text: 'Stone is heavier than glass, so each glass sits steady in the hand and on the table. The weight is part of the pleasure: it feels like something made to keep, not something bought in a six-pack.' },
+      { title: 'A pair that tells a story', text: 'Because both glasses come from natural stone, they are matched in shape and size but never identical in pattern. That makes them a fitting gift for two people: a pair that belongs together without being the same.' },
+    ],
+    perfectFor: ['Anniversaries', 'Weddings and engagements', 'Housewarmings', 'Holiday dinners', 'Collectors of natural stone'], name: 'Onyx Wine Glasses, Set of 2', badge: 'Best for anniversaries', images: img('wine-glasses', 2),
     short: 'A hand-finished pair, each glass with its own banding.',
     tagline: 'A matched pair that is still one of a kind.',
     overview: [
@@ -35,7 +43,14 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: 'wine-chiller', name: 'Onyx Wine Chiller', badge: 'Host favorite', images: img('wine-chiller', 4),
+    slug: 'wine-chiller',
+    navLabel: 'Wine Chiller',
+    features: [
+      { title: 'Stone keeps the cold', text: 'Onyx holds its temperature. Chill the sleeve, slide in a bottle that is already cold, and the stone helps keep it cool through dinner without a single ice cube.' },
+      { title: 'No drips, no puddles', text: 'An ice bucket leaves a wet ring and a dripping bottle. The onyx sleeve stays dry on the outside, so the tablecloth and the label stay clean.' },
+      { title: 'A centerpiece that works', text: 'With its natural banding and solid base, the chiller looks like sculpture on the table. It earns its place even when the bottle is gone.' },
+    ],
+    perfectFor: ['Dinner-party hosts', 'Holiday tables', 'Housewarming gifts', 'Outdoor summer dinners', 'Corporate thank-you gifts'], name: 'Onyx Wine Chiller', badge: 'Host favorite', images: img('wine-chiller', 4),
     short: 'A stone sleeve that keeps a chilled bottle cool at the table.',
     tagline: 'Cold wine at the table, without the ice bucket.',
     overview: [
@@ -60,7 +75,14 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: 'tequila-shot-set', name: 'Onyx Shot Glass Set with Tray', badge: 'Giftable set', images: img('tequila-shot-set', 4),
+    slug: 'tequila-shot-set',
+    navLabel: 'Shot Glass Sets',
+    features: [
+      { title: 'A set made for display', text: 'Most barware hides in a cabinet. This set lives on the bar cart, because the glasses and matching tray look like a small stone sculpture between uses.' },
+      { title: 'Every set is unique', text: 'Each glass is cut from natural onyx, so color and banding shift from piece to piece. No two sets are the same, which makes it a gift that feels personal.' },
+      { title: 'Ready to give', text: 'Glasses and tray come together, with gift boxing and engraving on request. Ask about bulk orders for weddings, groomsmen and corporate events.' },
+    ],
+    perfectFor: ['Birthdays and milestones', 'Groomsmen and bridal parties', 'Bar-cart styling', 'Corporate gifts', 'Celebration hosts'], name: 'Onyx Shot Glass Set with Tray', badge: 'Giftable set', images: img('tequila-shot-set', 4),
     short: 'Shot glasses on a matching onyx tray.',
     tagline: 'A bar-cart set that looks like sculpture.',
     overview: [
@@ -85,7 +107,14 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: 'beer-mug', name: 'Onyx Beer Mug', badge: 'One of a kind', images: img('beer-mug', 3),
+    slug: 'beer-mug',
+    navLabel: 'Beer Mugs',
+    features: [
+      { title: 'Built to hold the cold', text: 'Chill the mug in the refrigerator before serving. Stone holds its temperature, so it stays cool longer than a glass mug at room temperature.' },
+      { title: 'Solid in the hand', text: 'A weighty body and a comfortable handle make it feel substantial, the kind of mug that becomes someone\u2019s favorite.' },
+      { title: 'A personal gift', text: 'Natural banding makes every mug unique, and engraving on request turns it into a keepsake for a birthday, Father\u2019s Day or a wedding party.' },
+    ],
+    perfectFor: ["Father's Day", 'Birthdays', 'Groomsmen gifts', 'Home bar owners', 'Retirement gifts'], name: 'Onyx Beer Mug', badge: 'One of a kind', images: img('beer-mug', 3),
     short: 'A weighty, hand-finished mug with a comfortable handle.',
     tagline: 'Heavy in the hand, cool to the touch.',
     overview: [

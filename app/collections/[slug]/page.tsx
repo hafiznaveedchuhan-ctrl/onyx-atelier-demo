@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { products } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
@@ -51,6 +52,23 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       <section className="pdp-highlights">
         {p.highlights.map((h) => <div key={h.title}><h3>{h.title}</h3><p>{h.text}</p></div>)}
+      </section>
+
+      <section className="features">
+        {p.features.map((f, i) => {
+          const src = p.images[(i + 1) % p.images.length];
+          return (
+            <div key={f.title} className={`feature ${i % 2 ? 'is-flipped' : ''}`}>
+              <div className="feature-media"><Image src={src} alt={`${p.name}: ${f.title}`} fill sizes="(max-width: 860px) 100vw, 50vw" /><span className="sample-tag">Sample photo</span></div>
+              <div className="feature-copy"><span className="feature-num">0{i + 1}</span><h2>{f.title}</h2><p>{f.text}</p></div>
+            </div>
+          );
+        })}
+      </section>
+
+      <section className="perfect-for">
+        <h2>Perfect for</h2>
+        <ul>{p.perfectFor.map((x) => <li key={x}>{x}</li>)}</ul>
       </section>
 
       <section className="pdp-split">

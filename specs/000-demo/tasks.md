@@ -12,3 +12,4 @@
 - [x] T11 Gift list drawer (cart pattern, no invented prices)
 - [x] T12 KSOR scaffolded (npx @panaversity/ksor init), onyx record written, format-checker ok; chat compiled from KSOR
 - [x] T13 Owner images + full product pages (spec-ui-v2 revision v3)
+- [x] T14 Product nav links, Shop All page, image-led feature sections + Perfect for on every product page
