@@ -1,6 +1,15 @@
+# dependencies and builds
 node_modules
 .next
-.env*
-!.env.example
+out
 lib/knowledge.generated.ts
 .vercel
+
+# secrets — never commit (API keys, GitHub tokens, DB URLs)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials*.json

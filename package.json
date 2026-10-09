@@ -6,7 +6,9 @@
     "knowledge": "node scripts/build-knowledge.mjs",
     "dev": "npm run knowledge && next dev",
     "build": "npm run knowledge && next build",
-    "start": "next start"
+    "start": "next start",
+    "check-secrets": "node scripts/check-secrets.mjs",
+    "hooks": "printf '#!/bin/sh\\nnode scripts/check-secrets.mjs\\n' > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit"
   },
   "dependencies": {
     "next": "15.5.4",

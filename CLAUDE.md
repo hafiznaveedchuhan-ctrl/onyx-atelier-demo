@@ -12,5 +12,5 @@ Built by Ibrahim Digital Solutions. Spec-Driven Development: specs/ governs code
 
 ## Workflow
 - If a task reveals the spec is silent, update specs/000-demo/spec.md first.
-- Commit after each completed task.
+- Commit after each completed task. A pre-commit hook (scripts/check-secrets.mjs, install with `npm run hooks`) blocks API keys and tokens.
 - onyx-ksor/ is the KSOR (scaffolded with @panaversity/ksor). Edit knowledge there, run its format checker, then rebuild.
