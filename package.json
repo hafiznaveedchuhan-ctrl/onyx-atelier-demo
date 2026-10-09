@@ -11,7 +11,7 @@
     "hooks": "printf '#!/bin/sh\\nnode scripts/check-secrets.mjs\\n' > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit"
   },
   "dependencies": {
-    "next": "15.5.4",
+    "next": "15.5.27",
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },
