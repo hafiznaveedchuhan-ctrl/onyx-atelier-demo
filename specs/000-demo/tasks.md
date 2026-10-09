@@ -10,3 +10,4 @@
 - [x] T9 UI v2: premium US retail layout (spec-ui-v2.md)
 - [x] T10 Free-license onyx photography + /credits page
 - [x] T11 Gift list drawer (cart pattern, no invented prices)
+- [x] T12 KSOR scaffolded (npx @panaversity/ksor init), onyx record written, format-checker ok; chat compiled from KSOR

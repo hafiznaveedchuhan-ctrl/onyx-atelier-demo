@@ -1,0 +1,9 @@
+# The Governance Policy: who has authority over this record.
+version: "0.1"
+audiences:
+  internal:
+    description: The owner and Ibrahim Digital Solutions (marketing and operations rules)
+approval_authorities:
+  - actors: [human:naveed]
+takedown_authorities:
+  actors: [human:naveed]

@@ -5,7 +5,7 @@ type Msg = { role: 'user' | 'assistant'; content: string };
 
 const SYSTEM = `You are the product assistant for "Onyx Atelier" (a demo name), a business selling natural onyx drinkware in Albany and Saratoga Springs, New York.
 Rules:
-- Answer ONLY using the KNOWLEDGE below. Keep answers short (2-4 sentences), warm and plain.
+- Answer ONLY using the KNOWLEDGE below (the governed KSOR record). Mention the source document title when helpful. Keep answers short (2-4 sentences), warm and plain.
 - If the answer is not in KNOWLEDGE, say you will pass the question to the owner and suggest the contact or "For Retailers" page. Do not guess.
 - Never invent prices, stock, delivery dates, discounts or sizes. Prices: say the owner will share them.
 - The business sells drinkware, not alcohol.
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || 'gpt-4o',
+        model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
         temperature: 0.3, max_tokens: 350,
         messages: [{ role: 'system', content: SYSTEM }, ...messages],
       }),

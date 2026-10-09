@@ -1,0 +1,214 @@
+{
+  "format": 1,
+  "build_id": "sha256:a378c397610422ade806d1a4a1ae45c9eb789c114e41f9080440de64f8bbcbae",
+  "ksor_version": "0.0.61",
+  "okf": {
+    "version": "0.2",
+    "commit": "ad30107c31c06aec8a7d5636e0d1058118604e6f",
+    "spec_sha256": "26aa5da029278939f914e578107242d9607d4f2dc5fe153272b82f9ed1030101"
+  },
+  "source_commit": null,
+  "dirty": true,
+  "as_of": "2026-10-09T12:37:09.006Z",
+  "drafts": "hidden",
+  "instance_sha256": "bde2e27ada34e556c80fffc64a988e53042066487b3244b036eca79d0279aa57",
+  "policy_sha256": "55e9e27f44e3fcbb346a72bc4072ef5241445e2bc46910bee32d97196a4a8b9c",
+  "people_sha256": "c12d362d48a9b1dcfadedcd1584859f5c45ffcaccc5091c37359a99158b8d67f",
+  "ledger_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "ledger_entries": [],
+  "audiences": {
+    "registry": [
+      "internal"
+    ],
+    "viewers": {
+      "public": [
+        "public"
+      ],
+      "internal": [
+        "public",
+        "internal"
+      ]
+    }
+  },
+  "documents": [
+    {
+      "path": "about.md",
+      "sha256": "b608b742215dca418fd32203a38d2093e98a596948b3c40e6bdc70b9a121ce85",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "customer-care/care.md",
+      "sha256": "a7e74a68abcdb18e2e92def83eb9d78cc96218e355361a9cbd1d111d7145ef41",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "customer-care/gifting.md",
+      "sha256": "fcd5936876537971b78a94e4fb5acdb354714ebf17fc07cca6607ade711bb823",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "customer-care/orders-delivery.md",
+      "sha256": "d2bfa3d3d24ce67e588bab1b25af2bea588fa3be2166c5fb52a0dbeed963973d",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "operations/assistant-boundaries.md",
+      "sha256": "5c934697fef3d12329c796ab0252f81fc01e174e3d48367788f21cfc658e357a",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "operations/marketing-compliance.md",
+      "sha256": "fb62b180e7748f2058ddd2824bc788be887f1e6f048c923ed10809bec6f31520",
+      "status": "stable",
+      "audience": [
+        "internal"
+      ],
+      "admitted": [
+        "internal"
+      ]
+    },
+    {
+      "path": "products/about-onyx.md",
+      "sha256": "0620a3b8fc89b7fb53d6f9468731cc9afadd3e8ee586f77ea01f5bed2002dfec",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "products/beer-mug.md",
+      "sha256": "4022288d37601f44778f2924d5630479a991c7190fc75da777db7a44a29cff54",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "products/shot-glass-set.md",
+      "sha256": "8cf00e46afaf46703809418702283613ab68a3e724e47b79c4f2ba91775c5298",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "products/wine-chiller.md",
+      "sha256": "c949a4bf7f2571161319074ab6a4e15e57919ddbd48925b1c64e0458c907406f",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "products/wine-glasses.md",
+      "sha256": "d7113ecb1cc0d71493979ac311093e287f4c7629a55583ef6eed3d1e050b24f4",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    },
+    {
+      "path": "retail/wholesale.md",
+      "sha256": "e758ca08732e01916459091d05dde79a54537bddadafe1ec813c4c0c4570cad4",
+      "status": "stable",
+      "audience": [
+        "public"
+      ],
+      "admitted": [
+        "internal",
+        "public"
+      ]
+    }
+  ],
+  "companions": [],
+  "assets": [],
+  "indexes": [
+    {
+      "path": "customer-care/index.md",
+      "sha256": "90a20ea51ffab896e4364e78087e9e46e97c3826f411448e3cf6a546305c2c03"
+    },
+    {
+      "path": "index.md",
+      "sha256": "459aef2691b9d4be8480a6bae050715d49df4e0e66a32634baed763235edd3b9"
+    },
+    {
+      "path": "operations/index.md",
+      "sha256": "e380e96e5ff7c12fa716874a1dcc4afeb16ac377bfc2adeb27e7f9013db91cd3"
+    },
+    {
+      "path": "products/index.md",
+      "sha256": "780a289be8f945cea29aabfcb669d02e7b16122754c696dd87b6a8ea782b8aa6"
+    },
+    {
+      "path": "retail/index.md",
+      "sha256": "2249ebcc2ee4ffb4564946c022debe6a9a188b2a6383fc084ad354389240ad19"
+    }
+  ],
+  "bundles": [
+    {
+      "viewer": "public",
+      "sha256": "78fdaf766e2e07976ea7ecae369cbc0fdcb443206ac16a526e3f9e2a432283c4",
+      "files": 16
+    },
+    {
+      "viewer": "internal",
+      "sha256": "daf66bc347c27a4dfe54be0e5477f9fdd5ce7b46ed69c3613a7c5b727001499c",
+      "files": 17
+    }
+  ]
+}

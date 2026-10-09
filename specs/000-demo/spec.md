@@ -19,9 +19,9 @@ assistant will feel like, using their own product categories.
 - "For Retailers" page with a wholesale inquiry form (demo: no data stored).
 - "Behind this demo" page: what the client gets (setup, AI team, approvals).
 - AI product assistant (chat) on every page:
-  - Answers only from knowledge/*.md (mini KSOR).
+  - Answers only from onyx-ksor/knowledge (governed KSOR, public audience).
   - Out-of-scope questions -> polite hand-off to the owner.
-  - Model from OPENAI_MODEL env, default gpt-4o.
+  - Model from OPENAI_MODEL env, default gpt-4o-mini (client request).
   - Cost guards: short history, max tokens, per-IP rate limit.
   - If no API key: scripted fallback so the demo never breaks.
 - Persistent demo notice; noindex.

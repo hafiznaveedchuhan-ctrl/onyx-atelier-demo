@@ -19,4 +19,4 @@ Knowledge: knowledge/*.md compiled at build into lib/knowledge.generated.ts
 - In-memory IP limiter: 25 requests / 10 min (best effort on serverless).
 
 ## Deployment
-GitHub repo -> Vercel project; env: OPENAI_API_KEY, OPENAI_MODEL=gpt-4o.
+GitHub repo -> Vercel project; env: OPENAI_API_KEY, OPENAI_MODEL=gpt-4o-mini.
