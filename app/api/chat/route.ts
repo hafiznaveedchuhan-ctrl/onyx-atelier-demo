@@ -45,7 +45,7 @@ export async function POST(req: Request) {
   if (!last) return Response.json({ reply: 'Ask me anything about our onyx glasses, chiller, shot sets or mugs.' });
 
   const key = process.env.OPENAI_API_KEY;
-  if (!key) { console.error('chat: OPENAI_API_KEY is not set'); return Response.json({ reply: fallback(last), mode: 'fallback' }); }
+  if (!key) { console.error('chat: OPENAI_API_KEY is not set'); return Response.json({ reply: fallback(last), mode: 'fallback', reason: 'no-key' }); }
 
   try {
     const r = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -57,12 +57,12 @@ export async function POST(req: Request) {
         messages: [{ role: 'system', content: SYSTEM }, ...messages],
       }),
     });
-    if (!r.ok) { const e = await r.text().catch(() => ''); console.error('chat: OpenAI error', r.status, e.slice(0, 300)); return Response.json({ reply: fallback(last), mode: 'fallback' }); }
+    if (!r.ok) { const e = await r.text().catch(() => ''); console.error('chat: OpenAI error', r.status, e.slice(0, 300)); let code = ''; try { code = JSON.parse(e)?.error?.code ?? ''; } catch {} return Response.json({ reply: fallback(last), mode: 'fallback', reason: `openai-${r.status}${code ? '-' + code : ''}` }); }
     const data = await r.json();
     const reply = data?.choices?.[0]?.message?.content?.trim();
     return Response.json({ reply: reply || fallback(last), mode: 'live' });
   } catch (err) {
     console.error('chat: request failed', String(err).slice(0, 200));
-    return Response.json({ reply: fallback(last), mode: 'fallback' });
+    return Response.json({ reply: fallback(last), mode: 'fallback', reason: 'network' });
   }
 }
