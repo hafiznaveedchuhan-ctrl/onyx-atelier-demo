@@ -11,7 +11,7 @@ export default function GiftGuide() {
       </section>
       <section className="shop">
         <div className="card-grid">{picks.map(([who, slug]) => { const p = products.find((x) => x.slug === slug)!; return (
-          <div key={slug} className="gift-pick"><h2>{who}</h2><ProductCard p={p} /></div>); })}</div>
+          <div key={slug} className="gift-pick" data-reveal><h2>{who}</h2><ProductCard p={p} /></div>); })}</div>
       </section>
     </>
   );

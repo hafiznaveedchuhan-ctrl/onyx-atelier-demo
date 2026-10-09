@@ -3,12 +3,18 @@ import Image from 'next/image';
 import { products } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 import AskButton from '@/components/AskButton';
+import Icon from '@/components/Icons';
 
 const promises = [
-  ['One of a kind', 'Natural stone, so no two pieces match'],
-  ['Local delivery', 'Albany, Saratoga Springs and the Capital Region'],
-  ['Gift-ready', 'Boxed and wrapped on request'],
-  ['For retailers', 'Wholesale for stores and boutiques'],
+  ['gem', 'One of a kind', 'Natural stone, no two alike'],
+  ['truck', 'Local delivery', 'Albany and Saratoga Springs'],
+  ['gift', 'Gift-ready', 'Boxed and wrapped on request'],
+  ['store', 'For retailers', 'Wholesale for stores'],
+];
+const local = [
+  ['truck', 'Delivered locally', 'Across Albany, Saratoga Springs and the Capital Region. The owner confirms timing with you.'],
+  ['store', 'In local shops', 'We partner with wine shops and gift boutiques so you can see the stone in person.'],
+  ['gift', 'Wrapped to give', 'Gift boxing and engraving on request, for one gift or a hundred.'],
 ];
 const faqs = [
   ['How do I care for onyx?', 'Hand wash with mild soap and warm water and dry right away. Skip the dishwasher, and rinse after citrus or other acidic drinks.'],
@@ -21,65 +27,60 @@ export default function Home() {
   return (
     <>
       <section className="hero">
+        <Image src="/images/products/wine-glasses-1.jpg" alt="Elegant glasses in warm window light" fill priority sizes="100vw" className="hero-bg" />
         <div className="hero-copy">
           <p className="hero-kicker">The holiday edit</p>
           <h1>Natural onyx, made to be given.</h1>
           <p className="hero-text">Wine glasses, chillers, shot sets and mugs, each cut from stone with its own banding. No two are ever the same.</p>
           <div className="hero-actions">
-            <Link href="#shop" className="btn btn-dark">Shop the collection</Link>
-            <Link href="/gift-guide" className="btn btn-outline">Find a gift</Link>
+            <Link href="/collections" className="btn btn-light">Shop the collection</Link>
+            <Link href="/gift-guide" className="btn btn-ghost">Find a gift</Link>
           </div>
+          <ul className="hero-points"><li>Hand-finished</li><li>Local delivery</li><li>Gift-ready</li></ul>
         </div>
-        <div className="hero-media">
-          <Image src="/images/products/wine-glasses-1.jpg" alt="Wine glasses in warm window light" fill priority sizes="(max-width: 860px) 100vw, 50vw" />
-          <span className="hero-caption">Sample photo</span>
-        </div>
+        <span className="hero-caption">Sample photo</span>
       </section>
 
-      <ul className="promises">{promises.map(([t, d]) => <li key={t}><strong>{t}</strong><span>{d}</span></li>)}</ul>
+      <ul className="promises" data-reveal>{promises.map(([i, t, d]) => <li key={t}><span className="promise-icon"><Icon name={i} size={26} /></span><span><strong>{t}</strong><span>{d}</span></span></li>)}</ul>
 
-      <section id="shop" className="shop">
-        <div className="section-head"><h2>Shop by piece</h2><p>Every piece is hand-finished. Photos are samples until the store’s own photography is ready.</p></div>
+      <section id="shop" className="shop" data-reveal>
+        <div className="section-head"><div><p className="eyebrow">The collection</p><h2>Shop by piece</h2></div><Link href="/collections" className="text-link">View all pieces</Link></div>
         <div className="card-grid">{products.map((p) => <ProductCard key={p.slug} p={p} />)}</div>
       </section>
 
-      <section id="our-stone" className="editorial">
-        <div className="editorial-media"><Image src="/images/products/tequila-shot-set-3.jpg" alt="A set of shot glasses with gold rims on a dark stone counter" fill sizes="(max-width: 860px) 100vw, 50vw" /></div>
-        <div className="editorial-copy">
-          <h2>Why onyx</h2>
-          <p>Onyx forms in slow layers, which is where its bands of honey, cream and green come from. Hold a thin wall up to a window and it glows from inside.</p>
-          <p>It is heavier than glass and cool to the touch, and it holds its temperature. That is why a chilled onyx sleeve keeps a bottle cold right at the table.</p>
-          <AskButton label="Ask our assistant about the stone" prompt="What makes onyx special?" />
+      <section id="our-stone" className="statement" data-reveal>
+        <p className="eyebrow">Our stone</p>
+        <blockquote>Onyx forms in slow layers over thousands of years. Hold a thin wall to the light and it glows from within.</blockquote>
+        <div className="stats">
+          <div><strong>1 of 1</strong><span>No two pieces share a pattern</span></div>
+          <div><strong>By hand</strong><span>Every piece is polished by hand</span></div>
+          <div><strong>Holds the cold</strong><span>Stone keeps its temperature</span></div>
         </div>
+        <AskButton label="Ask our assistant about the stone" prompt="What makes onyx special?" />
       </section>
 
-      <section className="holiday">
-        <Image src="/images/products/tequila-shot-set-4.jpg" alt="Engraved shot glasses on black marble" fill sizes="100vw" />
+      <section className="holiday" data-reveal>
+        <Image src="/images/products/tequila-shot-set-4.jpg" alt="Engraved glasses on black marble" fill sizes="100vw" />
         <div className="holiday-copy">
+          <p className="eyebrow light">Gift guide</p>
           <h2>The gift that is never the same twice</h2>
-          <p>From anniversaries to the host who has everything, our gift guide matches each piece to the occasion.</p>
+          <p>From anniversaries to the host who has everything, each piece matched to the occasion.</p>
           <Link href="/gift-guide" className="btn btn-light">Open the gift guide</Link>
         </div>
       </section>
 
-      <section className="local">
-        <div className="local-copy">
-          <h2>Serving the Capital Region</h2>
-          <p>We deliver across Albany and Saratoga Springs, and we partner with local wine shops and gift boutiques so you can see the stone in person.</p>
-          <Link href="/retailers" className="text-link">Own a store? Stock our pieces</Link>
-        </div>
-        <div className="local-media"><Image src="/images/products/wine-chiller-3.jpg" alt="A modern kitchen with a built-in wine cooler" fill sizes="(max-width: 860px) 100vw, 50vw" /></div>
+      <section className="local" data-reveal>
+        <div className="section-head center-head"><div><p className="eyebrow">Close to home</p><h2>Serving the Capital Region</h2></div></div>
+        <div className="local-grid">{local.map(([i, t, d]) => <div key={t} className="local-card"><span className="promise-icon"><Icon name={i} size={28} /></span><h3>{t}</h3><p>{d}</p></div>)}</div>
       </section>
 
-      <section className="retail-band">
-        <div>
-          <h2>Wholesale for stores and boutiques</h2>
-          <p>Request our line sheet, minimum order, and samples delivered to your store.</p>
-        </div>
+      <section className="retail-band" data-reveal>
+        <div><p className="eyebrow light">Wholesale</p><h2>Stock onyx in your store</h2><p>Request our line sheet, minimum order, and samples delivered to your shop.</p></div>
         <Link href="/retailers" className="btn btn-light">Request wholesale details</Link>
       </section>
 
-      <section id="faq" className="faq">
+      <section id="faq" className="faq" data-reveal>
+        <p className="eyebrow center">Help</p>
         <h2>Questions, answered</h2>
         {faqs.map(([q, a]) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}
         <p className="faq-more">Still curious? <AskButton label="Ask our product assistant" /></p>

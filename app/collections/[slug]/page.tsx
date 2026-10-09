@@ -6,6 +6,7 @@ import { products } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 import Gallery from '@/components/Gallery';
 import AskButton from '@/components/AskButton';
+import Icon from '@/components/Icons';
 
 export function generateStaticParams() { return products.map((p) => ({ slug: p.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -43,14 +44,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
       </article>
 
-      <section className="pdp-story-band">
+      <section className="pdp-story-band" data-reveal>
         <div className="pdp-story-inner">
           <h2>The story of this piece</h2>
           {p.overview.map((t) => <p key={t}>{t}</p>)}
         </div>
       </section>
 
-      <section className="pdp-highlights">
+      <section className="pdp-highlights" data-reveal>
         {p.highlights.map((h) => <div key={h.title}><h3>{h.title}</h3><p>{h.text}</p></div>)}
       </section>
 
@@ -58,7 +59,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         {p.features.map((f, i) => {
           const src = p.images[(i + 1) % p.images.length];
           return (
-            <div key={f.title} className={`feature ${i % 2 ? 'is-flipped' : ''}`}>
+            <div key={f.title} className={`feature ${i % 2 ? 'is-flipped' : ''}`} data-reveal>
               <div className="feature-media"><Image src={src} alt={`${p.name}: ${f.title}`} fill sizes="(max-width: 860px) 100vw, 50vw" /><span className="sample-tag">Sample photo</span></div>
               <div className="feature-copy"><span className="feature-num">0{i + 1}</span><h2>{f.title}</h2><p>{f.text}</p></div>
             </div>
@@ -66,12 +67,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         })}
       </section>
 
-      <section className="perfect-for">
+      <section className="perfect-for" data-reveal>
         <h2>Perfect for</h2>
-        <ul>{p.perfectFor.map((x) => <li key={x}>{x}</li>)}</ul>
+        <ul>{p.perfectFor.map((x) => <li key={x}><Icon name="gift" size={16} />{x}</li>)}</ul>
       </section>
 
-      <section className="pdp-split">
+      <section className="pdp-split" data-reveal>
         <div><h2>How to use it</h2><ol>{p.howTo.map((t) => <li key={t}>{t}</li>)}</ol></div>
         <div><h2>A thoughtful gift</h2><p>{p.gifting}</p><Link href="/gift-guide" className="text-link">See the gift guide</Link></div>
       </section>
@@ -82,6 +83,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <p className="faq-more">More questions? <AskButton label="Ask our product assistant" prompt={`I have a question about the ${p.name}.`} /></p>
       </section>
 
+      <div className="sticky-ask"><span>{p.name}</span><AskButton label="Ask about pricing" prompt={`How can I get the price of the ${p.name}?`} solid /></div>
       <p className="sample-note center">Sample photos and sample details for a client demo. Final photography, sizes and materials come from the owner.</p>
 
       <section className="shop related"><div className="section-head"><h2>Pairs well with</h2></div><div className="card-grid card-grid-3">{others.map((o) => <ProductCard key={o.slug} p={o} />)}</div></section>

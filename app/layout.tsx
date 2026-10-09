@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ChatWidget from '@/components/ChatWidget';
+import Reveal from '@/components/Reveal';
 
 const display = Bodoni_Moda({ subsets: ['latin'], variable: '--font-display', style: ['normal', 'italic'] });
 const body = Jost({ subsets: ['latin'], variable: '--font-body' });
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main">{children}</main>
           <Footer />
           <ChatWidget />
+          <Reveal />
       </body>
     </html>
   );

@@ -51,7 +51,7 @@ export default function ChatWidget() {
           </form>
         </section>
       )}
-      {!open && <button className="chat-launch" onClick={() => setOpen(true)}>Ask about our onyx</button>}
+      {!open && <button className="chat-launch" onClick={() => setOpen(true)} aria-label="Ask about our onyx"><span className="chat-launch-text">Ask about our onyx</span></button>}
     </div>
   );
 }
