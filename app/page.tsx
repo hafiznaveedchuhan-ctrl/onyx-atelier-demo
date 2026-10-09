@@ -31,20 +31,20 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-media">
-          <Image src="/images/onyx-honey.jpg" alt="Close-up of polished honey onyx with layered bands" fill priority sizes="(max-width: 860px) 100vw, 50vw" />
-          <span className="hero-caption">Honey onyx, polished</span>
+          <Image src="/images/products/wine-glasses-1.jpg" alt="Wine glasses in warm window light" fill priority sizes="(max-width: 860px) 100vw, 50vw" />
+          <span className="hero-caption">Sample photo</span>
         </div>
       </section>
 
       <ul className="promises">{promises.map(([t, d]) => <li key={t}><strong>{t}</strong><span>{d}</span></li>)}</ul>
 
       <section id="shop" className="shop">
-        <div className="section-head"><h2>Shop by piece</h2><p>Every piece is hand-finished. Images are illustrations until our product photography is ready.</p></div>
+        <div className="section-head"><h2>Shop by piece</h2><p>Every piece is hand-finished. Photos are samples until the store’s own photography is ready.</p></div>
         <div className="card-grid">{products.map((p) => <ProductCard key={p.slug} p={p} />)}</div>
       </section>
 
       <section id="our-stone" className="editorial">
-        <div className="editorial-media"><Image src="/images/onyx-pale.jpg" alt="Pale onyx with soft grey veins" fill sizes="(max-width: 860px) 100vw, 50vw" /></div>
+        <div className="editorial-media"><Image src="/images/products/tequila-shot-set-3.jpg" alt="A set of shot glasses with gold rims on a dark stone counter" fill sizes="(max-width: 860px) 100vw, 50vw" /></div>
         <div className="editorial-copy">
           <h2>Why onyx</h2>
           <p>Onyx forms in slow layers, which is where its bands of honey, cream and green come from. Hold a thin wall up to a window and it glows from inside.</p>
@@ -54,7 +54,7 @@ export default function Home() {
       </section>
 
       <section className="holiday">
-        <Image src="/images/gift-box.jpg" alt="Wrapped gift boxes with red ribbon" fill sizes="100vw" />
+        <Image src="/images/products/tequila-shot-set-4.jpg" alt="Engraved shot glasses on black marble" fill sizes="100vw" />
         <div className="holiday-copy">
           <h2>The gift that is never the same twice</h2>
           <p>From anniversaries to the host who has everything, our gift guide matches each piece to the occasion.</p>
@@ -68,7 +68,7 @@ export default function Home() {
           <p>We deliver across Albany and Saratoga Springs, and we partner with local wine shops and gift boutiques so you can see the stone in person.</p>
           <Link href="/retailers" className="text-link">Own a store? Stock our pieces</Link>
         </div>
-        <div className="local-media"><Image src="/images/saratoga.jpg" alt="Victorian house on North Broadway in Saratoga Springs" fill sizes="(max-width: 860px) 100vw, 50vw" /></div>
+        <div className="local-media"><Image src="/images/products/wine-chiller-3.jpg" alt="A modern kitchen with a built-in wine cooler" fill sizes="(max-width: 860px) 100vw, 50vw" /></div>
       </section>
 
       <section className="retail-band">

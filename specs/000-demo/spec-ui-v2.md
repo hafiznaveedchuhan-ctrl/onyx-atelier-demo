@@ -28,3 +28,9 @@ announcement bar > sticky header (nav left, logo center, search / account / gift
 ## Acceptance
 - Looks premium at 1366px and 390px; keyboard focus visible; reduced motion respected.
 - Gift list works across pages; chat still works; build passes.
+
+## Revision v3 (owner-supplied images)
+- Owner supplied images replace all Wikimedia images. Excluded: branded products/labels (VINOVA, Cloudy Bay),
+  likely retailer/stock-agency photos, and off-brand props (banana scenes).
+- Every product photo is labeled "Sample photo"; /credits explains photos are samples, not the client's onyx pieces.
+- Each product has a full page: gallery, tagline, specs table, story, 4 highlights, how-to, gifting, care, 4 FAQs, pairs-well-with.

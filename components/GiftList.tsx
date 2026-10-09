@@ -2,7 +2,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { products } from '@/lib/products';
-import ProductRender from './ProductRender';
+import Image from 'next/image';
 
 type Item = { slug: string; qty: number };
 type Ctx = { items: Item[]; add: (slug: string, qty?: number) => void; remove: (slug: string) => void; open: boolean; setOpen: (o: boolean) => void; count: number };
@@ -31,7 +31,7 @@ export function GiftListProvider({ children }: { children: React.ReactNode }) {
         ) : (<>
           <ul className="drawer-items">
             {items.map((it) => { const p = products.find((x) => x.slug === it.slug)!; return (
-              <li key={it.slug}><div className="drawer-thumb"><ProductRender product={p} /></div>
+              <li key={it.slug}><div className="drawer-thumb"><Image src={p.images[0]} alt="" fill sizes="90px" /></div>
                 <div><p className="drawer-name">{p.name}</p><p className="drawer-meta">Qty {it.qty} · Price on request</p>
                   <button className="link-btn" onClick={() => remove(it.slug)}>Remove</button></div></li>); })}
           </ul>

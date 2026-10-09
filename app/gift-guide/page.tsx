@@ -6,7 +6,7 @@ export default function GiftGuide() {
   return (
     <>
       <section className="page-hero">
-        <Image src="/images/gift-box.jpg" alt="Wrapped gifts with red ribbon" fill priority sizes="100vw" />
+        <Image src="/images/products/wine-glasses-2.jpg" alt="Wine glasses with grapes on a wooden table" fill priority sizes="100vw" />
         <div className="page-hero-copy"><h1>The gift guide</h1><p>Four pieces, four occasions. Gift boxing and engraving on request.</p></div>
       </section>
       <section className="shop">
