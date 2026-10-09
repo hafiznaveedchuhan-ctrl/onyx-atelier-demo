@@ -1,1 +1,4 @@
-onyx-ksor
+onyx-ksor/system
+onyx-ksor/node_modules
+onyx-ksor/Dockerfile
+onyx-ksor/vercel.json
