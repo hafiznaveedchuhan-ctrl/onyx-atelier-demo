@@ -4,7 +4,6 @@ import type { Metadata } from 'next';
 import { products } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 import Gallery from '@/components/Gallery';
-import { AddToList } from '@/components/GiftList';
 import AskButton from '@/components/AskButton';
 
 export function generateStaticParams() { return products.map((p) => ({ slug: p.slug })); }
@@ -29,8 +28,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <h1>{p.name}</h1>
           <p className="price price-lg">Price on request</p>
           <p className="pdp-story">{p.overview[0]}</p>
-          <AddToList slug={p.slug} qtySelect />
-          <div className="pdp-ask"><AskButton label="Ask about this piece" prompt={`Tell me about the ${p.name}.`} /></div>
+          <div className="pdp-ask"><AskButton label="Ask about pricing" prompt={`How can I get the price of the ${p.name}?`} solid /><AskButton label="Ask about this piece" prompt={`Tell me about the ${p.name}.`} /></div>
           <ul className="pdp-perks">
             <li>Local delivery in Albany and Saratoga Springs</li>
             <li>Gift boxing and engraving on request</li>

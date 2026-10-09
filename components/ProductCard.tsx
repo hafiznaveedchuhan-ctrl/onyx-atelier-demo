@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Product } from '@/lib/products';
-import { AddToList } from './GiftList';
 export default function ProductCard({ p }: { p: Product }) {
   return (
     <article className="card">
@@ -14,7 +13,7 @@ export default function ProductCard({ p }: { p: Product }) {
         <h3><Link href={`/collections/${p.slug}`}>{p.name}</Link></h3>
         <p className="card-short">{p.short}</p>
         <p className="price">Price on request</p>
-        <AddToList slug={p.slug} />
+        <Link href={`/collections/${p.slug}`} className="btn btn-dark">View details</Link>
       </div>
     </article>
   );

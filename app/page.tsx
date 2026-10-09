@@ -13,7 +13,7 @@ const promises = [
 const faqs = [
   ['How do I care for onyx?', 'Hand wash with mild soap and warm water and dry right away. Skip the dishwasher, and rinse after citrus or other acidic drinks.'],
   ['Do you deliver locally?', 'Yes, across Albany, Saratoga Springs and the Capital Region. The owner confirms timing and cost with your order.'],
-  ['Can I order engraving or bulk gifts?', 'Ask through the gift list or the product assistant, and the owner will share options and lead times.'],
+  ['Can I order engraving or bulk gifts?', 'Ask the product assistant or contact the owner, who shares options and lead times.'],
   ['I own a store. Can I stock your pieces?', 'Yes. Request the wholesale line sheet and samples on the For Retailers page.'],
 ];
 

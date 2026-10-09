@@ -13,8 +13,8 @@ ksor:
 
 ## How to order
 
-Customers add pieces to the gift list on the website and request pricing, or
-contact the owner directly. The owner replies with prices and delivery options.
+Customers contact the owner directly (or ask the product assistant to pass
+the question on). The owner replies with prices and delivery options.
 
 ## Local delivery
 

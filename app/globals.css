@@ -56,6 +56,7 @@ main{display:block}
 .card-body{padding:1rem 0 0;display:flex;flex-direction:column;gap:.35rem;flex:1}
 .card-body h3{font-size:1.15rem;margin:0}.card-body h3 a{text-decoration:none}
 .card-short{margin:0;color:var(--ink-2);font-size:.9rem;flex:1}
+.card-body .btn{padding:.8rem 1rem;margin-top:.2rem}
 .price{margin:.2rem 0 .6rem;font-weight:500;letter-spacing:.02em}
 .add-row{display:flex;gap:.6rem}
 .add-row .btn{padding:.8rem 1rem}
@@ -100,7 +101,7 @@ details p,details ul{color:var(--ink-2);margin:.7rem 0 0}
 .price-lg{font-size:1.15rem;margin-bottom:1rem}
 .pdp-story{color:var(--ink-2);font-size:1.05rem;margin-bottom:1.6rem}
 .qty{display:flex;align-items:center;border:1px solid var(--ink)}.qty button{background:none;border:0;width:40px;height:100%;font-size:1.1rem;cursor:pointer}.qty span{min-width:24px;text-align:center}
-.pdp-ask{margin:1rem 0 1.4rem}.pdp-ask .btn{width:100%}
+.pdp-ask{margin:1rem 0 1.4rem;display:grid;gap:.6rem}.pdp-ask .btn{width:100%}
 .sample-note{font-size:.82rem;color:var(--ink-2);margin-top:1.2rem}
 .related{padding-top:1rem}
 /* page hero */

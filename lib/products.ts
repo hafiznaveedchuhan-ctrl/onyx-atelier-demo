@@ -31,7 +31,7 @@ export const products: Product[] = [
       { q: 'Will my glasses look exactly like the photos?', a: 'No two pieces are identical. Color and banding vary because onyx is natural stone, and that is part of what makes each pair special.' },
       { q: 'Can they go in the dishwasher?', a: 'No. Hand wash with mild soap and warm water, then dry right away.' },
       { q: 'Can I have them engraved?', a: 'Engraving is available on request. The owner confirms options, cost and lead time.' },
-      { q: 'How much do they cost?', a: 'Add the pair to your gift list and request pricing. The owner replies with current prices and delivery options.' },
+      { q: 'How much do they cost?', a: 'Ask the owner, who replies with current prices and delivery options.' },
     ],
   },
   {
@@ -56,7 +56,7 @@ export const products: Product[] = [
       { q: 'Does it chill a warm bottle?', a: 'It keeps an already chilled bottle cool at the table. Start with a cold bottle and a chilled sleeve.' },
       { q: 'How long should I chill the sleeve?', a: 'About an hour in the refrigerator (sample guidance; the owner confirms).' },
       { q: 'Will it fit my bottle?', a: 'It is designed for standard bottles. The owner confirms exact dimensions.' },
-      { q: 'How much does it cost?', a: 'Add it to your gift list and request pricing.' },
+      { q: 'How much does it cost?', a: 'Ask the owner, who replies with current prices and delivery options.' },
     ],
   },
   {
@@ -81,7 +81,7 @@ export const products: Product[] = [
       { q: 'How many glasses come in a set?', a: 'The owner confirms the set configuration before launch.' },
       { q: 'Can I order several sets for an event?', a: 'Yes. Ask about bulk and corporate gift orders.' },
       { q: 'Dishwasher safe?', a: 'No. Hand wash only.' },
-      { q: 'How much does it cost?', a: 'Add it to your gift list and request pricing.' },
+      { q: 'How much does it cost?', a: 'Ask the owner, who replies with current prices and delivery options.' },
     ],
   },
   {
@@ -106,7 +106,7 @@ export const products: Product[] = [
       { q: 'Can I put it in the freezer?', a: 'The refrigerator is best. Avoid sudden temperature shocks, such as freezer to hot water.' },
       { q: 'Is each mug different?', a: 'Yes. Natural banding makes every mug unique.' },
       { q: 'Can it be engraved?', a: 'Yes, on request. The owner confirms options and lead time.' },
-      { q: 'How much does it cost?', a: 'Add it to your gift list and request pricing.' },
+      { q: 'How much does it cost?', a: 'Ask the owner, who replies with current prices and delivery options.' },
     ],
   },
 ];

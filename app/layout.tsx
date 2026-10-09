@@ -4,7 +4,6 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ChatWidget from '@/components/ChatWidget';
-import { GiftListProvider } from '@/components/GiftList';
 
 const display = Bodoni_Moda({ subsets: ['latin'], variable: '--font-display', style: ['normal', 'italic'] });
 const body = Jost({ subsets: ['latin'], variable: '--font-body' });
@@ -20,13 +19,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
         <a href="#main" className="skip">Skip to content</a>
-        <GiftListProvider>
-          <div className="announce">Local delivery across Albany and Saratoga Springs. Gift-ready on request.</div>
+                  <div className="announce">Local delivery across Albany and Saratoga Springs. Gift-ready on request.</div>
           <Header />
           <main id="main">{children}</main>
           <Footer />
           <ChatWidget />
-        </GiftListProvider>
       </body>
     </html>
   );
